@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الحب غير المتبادل - الكتاب</title>
+<meta name="description" content="كتاب رقمي صغير يخلّد كل ما لم يُقل.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e8b96a"/>
+      <stop offset="100%" stop-color="#b25cff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor-glow" id="cursorGlow"></div>
+<div class="nav-backdrop" id="navBackdrop"></div>
+
+<div class="progress-track" aria-hidden="true"><div class="progress-fill" id="progressFill"></div></div>
+
+<!-- HEADER -->
+<header class="site-header" id="siteHeader">
+  <a href="#" class="logo" id="logoLink">
+    <svg class="logo-mark" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+    <span id="brandName">الحب غير المتبادل</span>
+  </a>
+
+  <nav class="main-nav" id="mainNav">
+    <ul>
+      <li><a href="#" id="navHome">الرئيسية</a></li>
+      <li><a href="#about" id="navAbout">عن الكتاب</a></li>
+      <li><a href="#preview" id="navPreview">معاينة</a></li>
+      <li><a href="#chapters" id="navChapters">الفصول</a></li>
+      <li><a href="#testimonials" id="navTestimonials">الآراء</a></li>
+      <li><a href="#faq" id="navFaq">الأسئلة</a></li>
+      <li><a href="#download" id="navDownload">التحميل</a></li>
+    </ul>
+  </nav>
+
+  <div class="header-right">
+    <button class="lang-pill" id="langToggle" type="button" aria-label="تغيير اللغة">EN</button>
+    <a href="#download" class="nav-cta" id="headerCta">حمّل الكتاب</a>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="فتح القائمة" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-glow" id="heroGlow"></div>
+
+  <div class="tag-row">
+    <span class="tag-pill" id="tag1">رسائل لم تُرسَل</span>
+    <span class="tag-pill" id="tag2">لحظات صمت</span>
+    <span class="tag-pill" id="tag3">انتظار طويل</span>
+    <span class="tag-pill" id="tag4">ذكريات محفوظة</span>
+  </div>
+
+  <div class="heart-stage" id="heartStage">
+    <span class="wordmark" aria-hidden="true">حب</span>
+    <div class="hero-heart-float">
+      <img class="hero-heart-img" id="heroHeartImg" src="heart-crystal.png" alt="قلب زجاجي ثلاثي الأبعاد">
+    </div>
+  </div>
+
+  <a href="#chapters" class="open-book-btn" id="openBookBtn">
+    <span>افتح الكتاب</span>
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+  </a>
+
+  <h1 class="hero-title" id="heroTitle">مساحة صغيرة لحبٍّ لم يُقَل</h1>
+  <p class="hero-subtitle" id="heroSubtitle">مخصص للشخص الذي أعطى للحياة معنىً جديدًا وأكثر دفئًا.</p>
+
+  <div class="scroll-cue" id="scrollCueText"><span></span>مرّر للأسفل</div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="marqueeTrack"></div>
+</div>
+
+<!-- ABOUT -->
+<section class="about reveal hidden-init" id="about">
+  <div class="wrap about-grid">
+    <div class="about-content-col">
+      <span class="eyebrow" id="aboutLabel">عن الكتاب</span>
+      <h2 class="about-title" id="aboutTitle">أكثر من مجرد <span>كتاب</span></h2>
+      <p class="about-desc" id="aboutDescription">هذا الموقع ليس مجرد مجموعة صفحات، بل مساحة جمعت فيها كل الكلمات التي لم تستطع السطور وحدها أن تلتقطها بالكامل. هنا كتبت لك كتابًا يخلّد تفاصيلنا، وأوقاتنا المشتركة، وكل مشاعرنا التي عشناها معًا.</p>
+      <a href="#preview" class="about-btn" id="aboutButton">
+        <span>اكتشف المزيد</span>
+        <svg class="about-btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+
+      <div class="about-stats-row">
+        <div class="about-stat"><span class="about-stat-number" data-target="120">0</span><span class="about-stat-plus">+</span><span class="about-stat-label" id="stat1Label">صفحة مكتوبة</span></div>
+        <div class="about-stat"><span class="about-stat-number" data-target="50">0</span><span class="about-stat-plus">+</span><span class="about-stat-label" id="stat2Label">قصة وحكاية</span></div>
+        <div class="about-stat"><span class="about-stat-number" data-target="1">0</span><span class="about-stat-label" id="stat3Label">شخص مخصص له</span></div>
+        <div class="about-stat"><span class="about-stat-number" data-target="100">0</span><span class="about-stat-plus">%</span><span class="about-stat-label" id="stat4Label">من القلب</span></div>
+      </div>
+    </div>
+
+    <div class="about-visual">
+      <div class="about-card" id="aboutCard">
+        <img src="heart-glass.png" alt="قلب زجاجي علوي">
+      </div>
+      <div class="about-floating-quote">
+        <svg viewBox="0 0 24 24"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+        <p id="floatingQuote">كل حرف هنا... قصة لم تُكتب بعد</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOK PREVIEW -->
+<section class="preview reveal hidden-init" id="preview">
+  <div class="wrap preview-grid">
+    <div class="preview-copy">
+      <span class="eyebrow" id="previewLabel">معاينة</span>
+      <h2 class="services-heading" id="previewHeading">اقرأ <span>مقطعًا</span></h2>
+      <p class="about-desc" id="previewDesc" style="margin-top:1rem;">اقلب الصفحة عشان تاخد فكرة عن أسلوب الكتاب، قبل ما تحمّل النسخة كاملة.</p>
+    </div>
+    <div class="preview-book">
+      <div class="preview-page" id="previewPage">
+        <div class="preview-page-face front">
+          <span class="preview-quote-mark">"</span>
+          <p class="preview-text" id="previewFrontText">في كل مرة كنت أهمّ فيها بالكلام، كانت الكلمات تتراجع كخطوة خائفة، وتبقى محبوسة بين ضلوعي تكبر بصمت.</p>
+          <button class="preview-flip-btn" id="previewFlipBtn" type="button">
+            <span id="previewFlipLabel">اقلب الصفحة</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M14 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+        <div class="preview-page-face back">
+          <span class="preview-quote-mark">"</span>
+          <p class="preview-text" id="previewBackText">ربما لم تعرفي أبدًا، لكن حبًا لم يُقل يبقى حبًا رغم كل شيء، وهذا الكتاب هو المكان الذي اخترته أخيرًا ليقول ما لم أقله.</p>
+          <button class="preview-flip-btn" id="previewFlipBackBtn" type="button">
+            <span id="previewFlipBackLabel">الصفحة السابقة</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12H3M10 6l-6 6 6 6"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services reveal hidden-init" id="services">
+  <div class="wrap">
+    <div class="services-head">
+      <span class="eyebrow center" id="servicesLabel">الخدمات</span>
+      <h2 class="services-heading" id="servicesHeading">ما يميز <span>تجربتك</span></h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🖋️</div>
+        <h4 id="serviceTitle1">كتابة أدبية راقية</h4>
+        <p id="serviceText1">نصوص مكتوبة بعناية فائقة، بأسلوب أدبي هادئ يلامس القارئ ويبقى في الذاكرة.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🎨</div>
+        <h4 id="serviceTitle2">تصميم أنيق</h4>
+        <p id="serviceText2">تنسيق بصري متكامل لكل صفحة، يجمع بين البساطة والفخامة في آن واحد.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📖</div>
+        <h4 id="serviceTitle3">نسخة رقمية وطباعة</h4>
+        <p id="serviceText3">احصل على الكتاب كملف PDF فوري التحميل، أو اطلب نسخة مطبوعة فاخرة.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">✨</div>
+        <h4 id="serviceTitle4">تجربة لا تُنسى</h4>
+        <p id="serviceText4">كل تفصيلة في الكتاب صُممت لتصنع تجربة قراءة مختلفة عن أي كتاب آخر.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery reveal hidden-init" id="gallery">
+  <div class="wrap">
+    <div class="services-head">
+      <span class="eyebrow center" id="galleryLabel">لحظات</span>
+      <h2 class="services-heading" id="galleryHeading">معرض <span>الذكريات</span></h2>
+    </div>
+    <div class="gallery-grid" id="galleryGrid"></div>
+  </div>
+</section>
+
+<!-- MEMORIES GALLERY -->
+<section class="memories reveal hidden-init" id="memories">
+  <div class="wrap">
+    <div class="memories-head">
+      <span class="eyebrow center" id="memoriesLabel">معرض الذكريات</span>
+      <h2 class="services-heading" id="memoriesHeading">معرض <span>الذكريات</span></h2>
+    </div>
+    <div class="memories-grid">
+      <div class="memories-item"><img src="memories-1.png" alt="ذكريات 1" loading="lazy"></div>
+      <div class="memories-item"><img src="memories-2.png" alt="ذكريات 2" loading="lazy"></div>
+      <div class="memories-item"><img src="memories-3.png" alt="ذكريات 3" loading="lazy"></div>
+      <div class="memories-item"><img src="memories-4.png" alt="ذكريات 4" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- MATCH / STORY ORIGIN -->
+<section class="match reveal hidden-init" id="story">
+  <div class="match-glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="match-head">
+      <h2 class="match-title" id="matchTitle">هل أنت مستعد لتقرأ<br><b>ما لم يُقل؟</b></h2>
+      <p class="match-sub" id="matchSub">إن كنت تؤمن أن بعض المشاعر تستحق أن تُكتب حتى لو لم تُقل، فهذا الكتاب لك. كل صفحة هنا كُتبت بصدق، بلا رتوش وبلا تجميل.</p>
+    </div>
+
+    <div class="match-grid">
+      <div class="match-stack">
+        <div class="stack-card s1">
+          <img src="heart-glass.png" alt="قلب زجاجي">
+        </div>
+        <div class="stack-card s2"></div>
+        <div class="stack-badge">
+          <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        </div>
+      </div>
+
+      <div class="match-copy">
+        <div class="idea-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        </div>
+        <h3 id="ideaTitle">دعنا نخبرك كيف بدأت الفكرة</h3>
+        <p id="ideaText">أردنا أن نمنح كل مشاعر لم تُقل مكانًا تستحقه، بدل أن تبقى حبيسة الذاكرة فقط. فولدت فكرة هذا الكتاب: مساحة صغيرة، صادقة، وخالية من أي تصنّع.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTERS TIMELINE -->
+<section class="chapters reveal hidden-init" id="chapters">
+  <div class="wrap">
+    <div class="chapters-head">
+      <span class="eyebrow center" id="chaptersLabel">الفصول</span>
+      <h2 class="services-heading" id="chaptersHeading">تصفّح <span>الفصول</span></h2>
+    </div>
+    <div class="timeline" id="timeline">
+      <div class="timeline-line"><span class="timeline-line-fill" id="timelineFill"></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials reveal hidden-init" id="testimonials">
+  <div class="wrap">
+    <div class="testimonials-head">
+      <span class="eyebrow center" id="testimonialsLabel">آراء القراء</span>
+      <h2 class="services-heading" id="testimonialsHeading">كلمات <span>قالوها</span></h2>
+    </div>
+    <div class="testimonial-grid" id="testimonialGrid"></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq reveal hidden-init" id="faq">
+  <div class="wrap">
+    <div class="faq-head">
+      <span class="eyebrow center" id="faqLabel">أسئلة شائعة</span>
+      <h2 class="services-heading" id="faqHeading">عندك <span>سؤال؟</span></h2>
+    </div>
+    <div class="faq-list" id="faqList"></div>
+  </div>
+</section>
+
+<!-- DOWNLOAD -->
+<section class="download reveal hidden-init" id="download">
+  <div class="wrap">
+    <div class="download-box">
+      <img class="download-heart" id="downloadHeartImg" src="heart-plush.png" alt="قلب مصاب بسهم">
+      <h2 class="download-heading" id="downloadHeading">حمّل نسختك <span>الآن</span></h2>
+      <p class="download-text" id="downloadText">جاهز؟ حمّل الكتاب وابدأ رحلتك مع صفحاته الأولى.</p>
+      <a href="book.pdf" download class="download-btn" id="downloadBookBtn">
+        <span id="downloadBtnLabel">تحميل نسخة PDF</span> <span aria-hidden="true">📥</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <button class="lightbox-prev" id="lightboxPrev">&#10094;</button>
+  <button class="lightbox-next" id="lightboxNext">&#10095;</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="صورة مكبّرة">
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <h3 id="footerBrand">الحب غير المتبادل</h3>
+      <p class="footer-tagline" id="footerTagline">كتاب صغير، أثر كبير.</p>
+      <div class="social-links">
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 2 .3 2.4.5.6.2 1 .5 1.5 1 .4.4.7.9 1 1.5.2.5.4 1.2.5 2.4.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 2-.5 2.4-.2.6-.5 1-1 1.5-.4.4-.9.7-1.5 1-.5.2-1.2.4-2.4.5-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-2-.3-2.4-.5-.6-.2-1-.5-1.5-1-.4-.4-.7-.9-1-1.5-.2-.5-.4-1.2-.5-2.4C2 15.6 2 15.2 2 12s0-3.6.1-4.9c.1-1.2.3-2 .5-2.4.2-.6.5-1 1-1.5.4-.4.9-.7 1.5-1 .5-.2 1.2-.4 2.4-.5C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.1-1 .1-1.6.2-1.9.4-.5.2-.8.4-1.2.7-.3.3-.6.7-.7 1.2-.1.3-.3.9-.4 1.9-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1 .2 1.6.4 1.9.2.5.4.8.7 1.2.3.3.7.6 1.2.7.3.1.9.3 1.9.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1-.1 1.6-.2 1.9-.4.5-.2.8-.4 1.2-.7.3-.3.6-.7.7-1.2.1-.3.3-.9.4-1.9.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1-.2-1.6-.4-1.9-.2-.5-.4-.8-.7-1.2-.3-.3-.7-.6-1.2-.7-.3-.1-.9-.3-1.9-.4-1.2-.1-1.6-.1-4.7-.1zm0 3.5a4.5 4.5 0 110 9 4.5 4.5 0 010-9zm0 1.8a2.7 2.7 0 100 5.4 2.7 2.7 0 000-5.4zm5.7-2a1.1 1.1 0 110 2.2 1.1 1.1 0 010-2.2z"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 22v-8.4h2.8l.4-3.3h-3.2V8.1c0-.9.3-1.6 1.7-1.6h1.7V3.5C16.5 3.4 15.4 3.3 14.1 3.3c-2.7 0-4.5 1.6-4.5 4.6v2.4H6.8v3.3h2.8V22h3.9z"/></svg></a>
+        <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24"><path d="M22 5.9c-.7.3-1.5.6-2.3.7.8-.5 1.5-1.3 1.8-2.3-.8.5-1.7.8-2.6 1a4.1 4.1 0 00-7 3.7A11.6 11.6 0 013 4.9a4.1 4.1 0 001.3 5.5c-.6 0-1.3-.2-1.8-.5v.1c0 2 1.4 3.6 3.3 4-.3.1-.7.1-1.1.1-.3 0-.5 0-.8-.1.5 1.6 2 2.8 3.8 2.8A8.2 8.2 0 012 18.6 11.6 11.6 0 008.3 20.4c7.5 0 11.6-6.3 11.6-11.6v-.5c.8-.6 1.5-1.3 2.1-2.1z"/></svg></a>
+      </div>
+    </div>
+
+    <div class="guestbook">
+      <h4 class="guestbook-heading" id="guestbookHeading">اترك ذكرى</h4>
+      <form id="guestbookForm">
+        <label for="gbName" class="visually-hidden">الاسم الكريم</label>
+        <input type="text" id="gbName" name="name" placeholder="الاسم الكريم..." required>
+        <label for="gbMessage" class="visually-hidden">اكتب ذكرى لطيفة</label>
+        <textarea id="gbMessage" name="message" placeholder="اكتب ذكرى لطيفة تود تخليدها معنا هنا..." required></textarea>
+        <button type="submit"><span id="guestbookSubmit">إرسال الرسالة ✨</span></button>
+      </form>
+    </div>
+  </div>
+  <p class="footer-bottom" id="footerBottom">© 2026 الحب غير المتبادل. كل الحقوق محفوظة.</p>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="script.js"></script>
+</body>
+</html>
